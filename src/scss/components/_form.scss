@@ -1,0 +1,83 @@
+.form {
+    padding: 5px 20px;
+    margin: 10px;
+
+    &__panel {
+        align-items: center;
+        background-color: rgba(white, 0.8);
+        box-shadow: 0 0 15px 1px  darken($white, 20%);
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__input {
+        border-bottom: 2px solid $darkGray;
+        width: 250px;
+
+        &::placeholder {
+            color: darken($white, 20%);
+        }
+    }
+
+    &__button {
+        border-radius: 10px;
+        font-family: 'Gudea';
+        font-weight: 700;
+
+        &--active {
+            border: 2px solid $blue;
+            color: $black;
+            cursor: pointer;
+            transition-duration: 0.3s;
+
+            &:hover {
+                background-color: $blue;
+                color: $white;
+            }
+        }
+
+        &--disabled {
+            background-color: darken($white, 5%);
+            border: 2px solid darken($white, 5%);
+            color: darken($white, 25%);
+            cursor: not-allowed;
+            transition-duration: 0.3s;
+        }
+    }
+
+    &__color-selector {
+        display: flex;
+        flex-flow: column nowrap;
+        left: 30px;
+        position: absolute;
+        top: 48px;
+        width: 250px;
+        box-shadow: 0 2px 5px 1px  darken($white, 5%);
+    }
+
+    &__color-option {
+        background-color: rgba(darken($pureWhite, 2%), 0.9);
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 10px;
+        transition-duration: 0.3s;
+
+        &:hover {
+            background-color: rgba($white, 0.9);
+        }
+    }
+
+    &__color-box {
+        border-radius: 45%;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+body {
+    transition-duration: 0.3s;
+}

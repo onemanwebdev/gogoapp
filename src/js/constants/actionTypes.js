@@ -1,0 +1,4 @@
+export const SEARCH_COLOR = 'SEARCH_COLOR'
+export const GET_COLORS_SET = 'GET_COLORS_SET'
+export const CHOOSE_COLOR = 'CHOOSE_COLOR'
+export const CLEAN_STATE = 'CLEAN_STATE'
