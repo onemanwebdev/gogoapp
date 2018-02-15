@@ -1,2 +1,2 @@
-For install: yarn\n
+For install: yarn <br/>
 For run on dev server: yarn start
