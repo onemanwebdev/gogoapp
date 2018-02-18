@@ -63,12 +63,22 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-        padding: 10px;
+        padding: 5px 10px;
         transition-duration: 0.3s;
 
         &:hover {
             background-color: rgba($white, 0.9);
         }
+    }
+
+    &__color-box-container {
+        align-items: center;
+        background-color: white;
+        border-radius: 45%;
+        display: flex;
+        justify-content: center;
+        height: 30px;
+        width: 30px;
     }
 
     &__color-box {

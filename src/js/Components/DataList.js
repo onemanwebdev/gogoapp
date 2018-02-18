@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { chooseColor } from '../actions'
+import { setBackgroundColor } from '../services/setBackgroundColor'
 
 const DataList = ({metaData, searchedString, chooseColor}) => {
     const filteredData = metaData.filter(metaDataElement => metaDataElement.name.includes(searchedString.toLowerCase()))
@@ -17,7 +18,9 @@ const DataList = ({metaData, searchedString, chooseColor}) => {
                             onClick={ev => chooseColor(color.name, color.hex)}
                         >
                             <p>{color.name}</p>
-                            <div className="form__color-box" style={{backgroundColor: `#${color.hex}`}}></div>
+                            <div className="form__color-box-container">
+                                <div className="form__color-box" style={{backgroundColor: setBackgroundColor(color.hex, 0.8)}}></div>
+                            </div>
                         </div>
                     )
                 })}

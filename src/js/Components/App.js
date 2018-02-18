@@ -20,7 +20,7 @@ class App extends Component {
     }
 
     setColor = () => {
-        setBackgroundColor(this.props.selectedColor.colorHex)
+        document.body.style.backgroundColor = setBackgroundColor(this.props.selectedColor.colorHex)
         this.props.dispatch(cleanState())
     }
 

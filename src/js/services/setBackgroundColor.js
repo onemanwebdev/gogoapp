@@ -1,15 +1,11 @@
 import { opacity } from '../constants/config'
 
-export const setBackgroundColor = (hexColor) => {
-    const arrayWithHex = [];
+export const setBackgroundColor = (hexColor, alfa = opacity ) => {
+    const substrLenght = hexColor.length / 3
+    const regex = new RegExp(`^([a-f\\d]{${substrLenght}})([a-f\\d]{${substrLenght}})([a-f\\d]{${substrLenght}})$`, 'i')
+    const arrayWithHex = regex.exec(hexColor).slice(1,4)
+    const arrayWithInt = arrayWithHex.map(arrayElem => substrLenght === 2 ? parseInt(arrayElem, 16) : Math.sqrt(parseInt(arrayElem, 16) - 1))
+    arrayWithInt.push(alfa)
 
-    hexColor.length === 3 ?
-        arrayWithHex.push(hexColor.slice(0,1).concat(hexColor.slice(0,1)), hexColor.slice(1,2).concat(hexColor.slice(1,2)), hexColor.slice(2).concat(hexColor.slice(2)))
-    :
-        arrayWithHex.push(hexColor.slice(0,2), hexColor.slice(2,4), hexColor.slice(4))
-
-    const arrayWithInt = arrayWithHex.map(arrayElem => parseInt(arrayElem, 16))
-    arrayWithInt.push(opacity)
-
-    document.body.style.backgroundColor = `rgba(${arrayWithInt[0]}, ${arrayWithInt[1]}, ${arrayWithInt[2]}, ${arrayWithInt[3]})`
+    return `rgba(${arrayWithInt.join(',')})`
 }
