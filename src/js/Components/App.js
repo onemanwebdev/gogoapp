@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import DataList from './DataList'
@@ -6,7 +6,7 @@ import { endpoint } from '../constants/config'
 import { setBackgroundColor } from '../services/setBackgroundColor'
 import { searchColor, getColorsSet, cleanState } from '../actions'
 
-class App extends Component {
+export class App extends Component {
     constructor(props) {
         super(props)
     }
